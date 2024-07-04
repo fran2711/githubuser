@@ -27,6 +27,7 @@ public protocol UserListVM: ObservableObject {
 public struct UsersList<ViewModel: UserListVM>: View {
     
     @StateObject private var viewModel: ViewModel
+    @State var searchText: String = ""
     
     private var searchResults: [User] {
         if viewModel.searchText.isEmpty {
@@ -44,7 +45,7 @@ public struct UsersList<ViewModel: UserListVM>: View {
         NavigationStack {
             List(searchResults) { user in
                 NavigationLink {
-                    
+                    UserDetailView(viewModel: UserDetailViewModel(user: user))
                 } label: {
                     UserCell(imageUrl: user.avatarImageUrl,
                              name: user.userName)
@@ -57,8 +58,9 @@ public struct UsersList<ViewModel: UserListVM>: View {
                 
             }
             .listStyle(.plain)
-            .searchable(text: $viewModel.searchText)
-            .onChange(of: viewModel.searchText) { _, newValue in
+            .searchable(text: $searchText)
+            .onChange(of: searchText) { _, newValue in
+                viewModel.searchText = searchText
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     viewModel.handle(event: .searchUser(user: newValue))
                 }

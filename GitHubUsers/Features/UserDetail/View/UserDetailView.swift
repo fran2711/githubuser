@@ -56,6 +56,12 @@ public struct UserDetailView<ViewModel: UserDetailVM>: View {
                     ForEach(viewModel.repos) { repo in
                         ReposCell(name: repo.name,
                                   description: repo.description)
+                        
+                        if repo != viewModel.repos.last {
+                            Divider()
+                                .background(Color.white)
+                                .frame(height: 2)
+                        }
                     }
                 }
                 .padding()
@@ -68,8 +74,11 @@ public struct UserDetailView<ViewModel: UserDetailVM>: View {
                 VStack {
                     ForEach(viewModel.followers) { follower in
                         UserCell(imageUrl: follower.avatarImageUrl, name: follower.userName)
-                        Divider()
-                            .frame(height: 2)
+                        
+                        if follower != viewModel.followers.last {
+                            Divider()
+                                .frame(height: 2)
+                        }
                     }
                 }
                 .padding()

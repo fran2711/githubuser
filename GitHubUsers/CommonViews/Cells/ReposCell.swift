@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReposCell: View {
     var name: String
-    var description: String
+    var description: String?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,14 +17,12 @@ struct ReposCell: View {
                 .font(.headline)
                 .foregroundStyle(.white)
             
-            Text(description)
+            Text(description ?? "")
                 .font(.caption)
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.leading)
             
-            Divider()
-                .background(Color.white)
-                .frame(height: 2)
+            
         }
     }
 }

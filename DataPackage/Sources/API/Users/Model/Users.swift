@@ -58,13 +58,20 @@ extension User: Hashable {
 public struct Repo: Decodable, Identifiable {
     public let id: Int
     public let name: String
-    public let description: String
+    public let description: String?
     
-    public init(id: Int, name: String, description: String) {
+    public init(id: Int, name: String, description: String?) {
         self.id = id
         self.name = name
         self.description = description
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case description
+    }
+    
 }
 
 extension Repo: Hashable {

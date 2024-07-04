@@ -17,4 +17,12 @@ public class Repository: ObservableObject {
     func fetchUsers(user: String?, page: Int) async throws -> [User]? {
         try await userDataSource.fetchUsers(user: user, page: page)
     }
+    
+    func fetchUserFollowersWithUrl(_ url: String) async throws -> [User]? {
+        try await userDataSource.fetchUserFollowersWithUrl(url)
+    }
+    
+    func fetchUserReposWithUrl(_ url: String) async throws -> [Repo]? {
+        try await userDataSource.fetchUserReposWithUrl(url)
+    }
 }
