@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,11 +14,12 @@
 		94E958522C357EBD00EFAF87 /* GitHubUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958512C357EBD00EFAF87 /* GitHubUsersTests.swift */; };
 		94E9585C2C357EBD00EFAF87 /* GitHubUsersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9585B2C357EBD00EFAF87 /* GitHubUsersUITests.swift */; };
 		94E9585E2C357EBD00EFAF87 /* GitHubUsersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9585D2C357EBD00EFAF87 /* GitHubUsersUITestsLaunchTests.swift */; };
-		94E9586E2C358B6700EFAF87 /* APIUsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9586D2C358B6700EFAF87 /* APIUsersDataSource.swift */; };
-		94E958712C358C7900EFAF87 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958702C358C7900EFAF87 /* Users.swift */; };
-		94E958722C3673BF00EFAF87 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9586B2C357FD300EFAF87 /* API.swift */; };
-		94E958752C3673FB00EFAF87 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958742C3673F300EFAF87 /* URLSession+Extension.swift */; };
-		94E958772C36740200EFAF87 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958762C36740200EFAF87 /* Data+Extension.swift */; };
+		94E9587A2C369B8600EFAF87 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958792C369B8600EFAF87 /* UsersList.swift */; };
+		94E9587E2C369C4B00EFAF87 /* AlertUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9587D2C369C4300EFAF87 /* AlertUIModel.swift */; };
+		94E9587F2C369C4E00EFAF87 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9587C2C369C4300EFAF87 /* LoadingView.swift */; };
+		94E958822C369F2C00EFAF87 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958812C369F2C00EFAF87 /* UserCell.swift */; };
+		94E958862C36A70B00EFAF87 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958852C36A70B00EFAF87 /* UserListViewModel.swift */; };
+		94E958892C36AECB00EFAF87 /* DataPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 94E958882C36AECB00EFAF87 /* DataPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +50,11 @@
 		94E958572C357EBD00EFAF87 /* GitHubUsersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUsersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E9585B2C357EBD00EFAF87 /* GitHubUsersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUsersUITests.swift; sourceTree = "<group>"; };
 		94E9585D2C357EBD00EFAF87 /* GitHubUsersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUsersUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		94E9586B2C357FD300EFAF87 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		94E9586D2C358B6700EFAF87 /* APIUsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUsersDataSource.swift; sourceTree = "<group>"; };
-		94E958702C358C7900EFAF87 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		94E958742C3673F300EFAF87 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
-		94E958762C36740200EFAF87 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		94E958792C369B8600EFAF87 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
+		94E9587C2C369C4300EFAF87 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		94E9587D2C369C4300EFAF87 /* AlertUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUIModel.swift; sourceTree = "<group>"; };
+		94E958812C369F2C00EFAF87 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		94E958852C36A70B00EFAF87 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E958892C36AECB00EFAF87 /* DataPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +106,8 @@
 		94E9583F2C357EBA00EFAF87 /* GitHubUsers */ = {
 			isa = PBXGroup;
 			children = (
-				94E958732C3673EC00EFAF87 /* Utils */,
-				94E9586A2C357FC800EFAF87 /* API */,
+				94E9587B2C369C2E00EFAF87 /* Features */,
+				94E958782C369B6900EFAF87 /* CommonViews */,
 				94E958402C357EBA00EFAF87 /* GitHubUsersApp.swift */,
 				94E958422C357EBA00EFAF87 /* ContentView.swift */,
 				94E958442C357EBC00EFAF87 /* Assets.xcassets */,
@@ -139,39 +141,47 @@
 			path = GitHubUsersUITests;
 			sourceTree = "<group>";
 		};
-		94E9586A2C357FC800EFAF87 /* API */ = {
+		94E958782C369B6900EFAF87 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
-				94E9586C2C358A7E00EFAF87 /* Users */,
-				94E9586B2C357FD300EFAF87 /* API.swift */,
+				94E9587D2C369C4300EFAF87 /* AlertUIModel.swift */,
+				94E9587C2C369C4300EFAF87 /* LoadingView.swift */,
 			);
-			path = API;
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
-		94E9586C2C358A7E00EFAF87 /* Users */ = {
+		94E9587B2C369C2E00EFAF87 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				94E9586F2C358C5100EFAF87 /* Model */,
-				94E9586D2C358B6700EFAF87 /* APIUsersDataSource.swift */,
+				94E958802C369F1D00EFAF87 /* UsersList */,
 			);
-			path = Users;
+			path = Features;
 			sourceTree = "<group>";
 		};
-		94E9586F2C358C5100EFAF87 /* Model */ = {
+		94E958802C369F1D00EFAF87 /* UsersList */ = {
 			isa = PBXGroup;
 			children = (
-				94E958702C358C7900EFAF87 /* Users.swift */,
+				94E958842C36A6F700EFAF87 /* ViewModel */,
+				94E958832C36A6EF00EFAF87 /* View */,
 			);
-			path = Model;
+			path = UsersList;
 			sourceTree = "<group>";
 		};
-		94E958732C3673EC00EFAF87 /* Utils */ = {
+		94E958832C36A6EF00EFAF87 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94E958742C3673F300EFAF87 /* URLSession+Extension.swift */,
-				94E958762C36740200EFAF87 /* Data+Extension.swift */,
+				94E958792C369B8600EFAF87 /* UsersList.swift */,
+				94E958812C369F2C00EFAF87 /* UserCell.swift */,
 			);
-			path = Utils;
+			path = View;
+			sourceTree = "<group>";
+		};
+		94E958842C36A6F700EFAF87 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				94E958852C36A70B00EFAF87 /* UserListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +200,9 @@
 			dependencies = (
 			);
 			name = GitHubUsers;
+			packageProductDependencies = (
+				94E958882C36AECB00EFAF87 /* DataPackage */,
+			);
 			productName = GitHubUsers;
 			productReference = 94E9583D2C357EBA00EFAF87 /* GitHubUsers.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +275,9 @@
 				Base,
 			);
 			mainGroup = 94E958342C357EBA00EFAF87;
+			packageReferences = (
+				94E958872C36AECB00EFAF87 /* XCLocalSwiftPackageReference "DataPackage" */,
+			);
 			productRefGroup = 94E9583E2C357EBA00EFAF87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,13 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E958712C358C7900EFAF87 /* Users.swift in Sources */,
-				94E958772C36740200EFAF87 /* Data+Extension.swift in Sources */,
-				94E9586E2C358B6700EFAF87 /* APIUsersDataSource.swift in Sources */,
-				94E958752C3673FB00EFAF87 /* URLSession+Extension.swift in Sources */,
+				94E9587A2C369B8600EFAF87 /* UsersList.swift in Sources */,
+				94E958862C36A70B00EFAF87 /* UserListViewModel.swift in Sources */,
+				94E9587F2C369C4E00EFAF87 /* LoadingView.swift in Sources */,
+				94E9587E2C369C4B00EFAF87 /* AlertUIModel.swift in Sources */,
 				94E958432C357EBA00EFAF87 /* ContentView.swift in Sources */,
 				94E958412C357EBA00EFAF87 /* GitHubUsersApp.swift in Sources */,
-				94E958722C3673BF00EFAF87 /* API.swift in Sources */,
+				94E958822C369F2C00EFAF87 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +650,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		94E958872C36AECB00EFAF87 /* XCLocalSwiftPackageReference "DataPackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = DataPackage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94E958882C36AECB00EFAF87 /* DataPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94E958352C357EBA00EFAF87 /* Project object */;
 }

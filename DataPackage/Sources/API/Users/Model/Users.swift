@@ -7,17 +7,27 @@
 
 import Foundation
 
-struct UserItems: Decodable {
+public struct UserItems: Decodable {
     var items: [User]
 }
 
-struct User: Decodable {
-    let userName: String
-    let avatarUrl: String
-    let reposUrl: String
-    let followersUrl: String
+public struct User: Decodable, Identifiable {
+    public let id: Int
+    public let userName: String
+    public let avatarUrl: String
+    public let reposUrl: String
+    public let followersUrl: String
+    
+    public init(id: Int, userName: String, avatarUrl: String, reposUrl: String, followersUrl: String) {
+        self.id = id
+        self.userName = userName
+        self.avatarUrl = avatarUrl
+        self.reposUrl = reposUrl
+        self.followersUrl = followersUrl
+    }
     
     enum CodingKeys: String, CodingKey {
+        case id
         case userName = "login"
         case avatarUrl = "avatar_url"
         case reposUrl = "repos_url"
@@ -25,9 +35,25 @@ struct User: Decodable {
     }
 }
 
-struct Repo: Decodable {
-    let name: String
-    let description: String
+extension User {
+    public var avatarImageUrl: URL? {
+        URL(string: avatarUrl)
+    }
+}
+
+extension User: Hashable {
+    public func hash(into hasher: inout Hasher) {
+          return hasher.combine(id)
+      }
+    
+    public static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+public struct Repo: Decodable {
+    public let name: String
+    public let description: String
 }
 
 /*{
