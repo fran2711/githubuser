@@ -20,6 +20,7 @@
 		94E958822C369F2C00EFAF87 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958812C369F2C00EFAF87 /* UserCell.swift */; };
 		94E958862C36A70B00EFAF87 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958852C36A70B00EFAF87 /* UserListViewModel.swift */; };
 		94E958892C36AECB00EFAF87 /* DataPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 94E958882C36AECB00EFAF87 /* DataPackage */; };
+		94E9588C2C36B3DE00EFAF87 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9588B2C36B3DE00EFAF87 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		94E9587D2C369C4300EFAF87 /* AlertUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUIModel.swift; sourceTree = "<group>"; };
 		94E958812C369F2C00EFAF87 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		94E958852C36A70B00EFAF87 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		94E9588B2C36B3DE00EFAF87 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +108,10 @@
 		94E9583F2C357EBA00EFAF87 /* GitHubUsers */ = {
 			isa = PBXGroup;
 			children = (
+				94E958402C357EBA00EFAF87 /* GitHubUsersApp.swift */,
+				94E9588A2C36B3A200EFAF87 /* WebServices */,
 				94E9587B2C369C2E00EFAF87 /* Features */,
 				94E958782C369B6900EFAF87 /* CommonViews */,
-				94E958402C357EBA00EFAF87 /* GitHubUsersApp.swift */,
 				94E958422C357EBA00EFAF87 /* ContentView.swift */,
 				94E958442C357EBC00EFAF87 /* Assets.xcassets */,
 				94E958462C357EBC00EFAF87 /* Preview Content */,
@@ -182,6 +185,14 @@
 				94E958852C36A70B00EFAF87 /* UserListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		94E9588A2C36B3A200EFAF87 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				94E9588B2C36B3DE00EFAF87 /* Repository.swift */,
+			);
+			path = WebServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				94E9587A2C369B8600EFAF87 /* UsersList.swift in Sources */,
 				94E958862C36A70B00EFAF87 /* UserListViewModel.swift in Sources */,
 				94E9587F2C369C4E00EFAF87 /* LoadingView.swift in Sources */,
+				94E9588C2C36B3DE00EFAF87 /* Repository.swift in Sources */,
 				94E9587E2C369C4B00EFAF87 /* AlertUIModel.swift in Sources */,
 				94E958432C357EBA00EFAF87 /* ContentView.swift in Sources */,
 				94E958412C357EBA00EFAF87 /* GitHubUsersApp.swift in Sources */,

@@ -22,6 +22,7 @@ public class API {
             let httpBody = try JSONEncoder().encode(body)
             return request(url: url, method: method, httpBody: httpBody)
         } catch {
+            Logger.log(.error, .repository, message: error.localizedDescription)
             throw error
         }
     }

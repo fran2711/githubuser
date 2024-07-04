@@ -9,45 +9,50 @@ import Foundation
 import SwiftUI
 import DataPackage
 
-enum UserListNavigation {
-    case userSelected(user: User)
-}
-
-protocol UserListNavigator {
-    func navigate(to navigation: UserListNavigation)
-}
-
 @MainActor
 class UserListViewModel: UserListVM {
+    
     @Published var searchText: String = ""
     @Published var users: [User] = []
     
     @Published private (set) var loading: Bool = false
     @Published var alert: AlertUIModel? = nil
     
-    private let navigator: UserListNavigator
-    var page: Int = 1
-
-    init(navigator: UserListNavigator) {
-        self.navigator = navigator
-    }
+    var nextPage: Int = 1
     
     func handle(event: UserListEvent) {
         switch event {
-        case .userSelected(let user): navigator.navigate(to: .userSelected(user: user))
-        case .requestNextPage: break
+        case .requestNextPage: self.requestNextPage()
+        case .searchUser(let user): self.getUsers(user: user)
         }
     }
     
-    
-    func getUsers() {
+    func getUsers(user: String) {
         loading = true
         Task {
             defer { self.loading = false }
-            
-//            do {
-//                let response = try await
-//            }
+            do {
+                guard let users = try await Repository.shared.fetchUsers(user: user, page: 1) else { return }
+                self.users = users
+                self.nextPage = 2
+            } catch {
+                Logger.log(.error, .repository, message: error.localizedDescription)
+                self.alert = .init(error: error)
+            }
         }
     }
+    
+    func requestNextPage() {
+        loading = true
+        Task {
+            defer { self.loading = false }
+            do {
+                guard let users = try await Repository.shared.fetchUsers(user: searchText, page: nextPage) else { return }
+                self.users.append(contentsOf: users)
+                self.nextPage+=1
+            } catch {
+                self.alert = .init(error: error)
+            }
+        }
+    }    
 }

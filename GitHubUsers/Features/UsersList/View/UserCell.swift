@@ -30,7 +30,6 @@ struct UserCell: View {
             
             Spacer()
             
-            Image(systemName: "chevron.right")
         }
     }
 }

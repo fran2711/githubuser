@@ -9,8 +9,8 @@ import SwiftUI
 import DataPackage
 
 public enum UserListEvent {
-    case userSelected(user: User)
     case requestNextPage
+    case searchUser(user: String)
 }
 
 @MainActor
@@ -20,14 +20,13 @@ public protocol UserListVM: ObservableObject {
     
     var loading: Bool { get }
     var alert: AlertUIModel? { get set }
-    
+        
     func handle(event: UserListEvent)
 }
 
 public struct UsersList<ViewModel: UserListVM>: View {
     
-    @StateObject var viewModel: ViewModel
-    @State private var searchText: String = ""
+    @StateObject private var viewModel: ViewModel
     
     private var searchResults: [User] {
         if viewModel.searchText.isEmpty {
@@ -42,21 +41,30 @@ public struct UsersList<ViewModel: UserListVM>: View {
     }
     
     public var body: some View {
-        VStack {
+        NavigationStack {
             List(searchResults) { user in
+                NavigationLink {
+                    
+                } label: {
+                    UserCell(imageUrl: user.avatarImageUrl,
+                             name: user.userName)
+                    .onAppear(perform: {
+                        if user == viewModel.users.last {
+                            viewModel.handle(event: .requestNextPage)
+                        }
+                    })
+                }
                 
-                UserCell(imageUrl: user.avatarImageUrl,
-                         name: user.userName)
-                .onAppear(perform: {
-                    if user == viewModel.users.last {
-                        viewModel.handle(event: .requestNextPage)
-                    }
-                })
             }
             .listStyle(.plain)
-            .searchable(text: $viewModel.searchText,
-                        placement: .navigationBarDrawer(displayMode: .always))
+            .searchable(text: $viewModel.searchText)
+            .onChange(of: viewModel.searchText) { _, newValue in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    viewModel.handle(event: .searchUser(user: newValue))
+                }
+            }
         }
+        .navigationTitle("Github Users")
         .alert(model: $viewModel.alert)
         .loading(loading: viewModel.loading)
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import DataPackage
 
 public struct AlertUIModel: Identifiable {
     public var id: String = UUID.init().uuidString
@@ -24,6 +25,18 @@ public struct AlertUIModel: Identifiable {
         self.title = title
         self.message = message
         self.actions = [action]
+    }
+    
+    public init(error: Error) {
+        if let error = error as? APIError {
+            self.init(apiError: error)
+        } else {
+            self.init(title: error.localizedDescription)
+        }
+    }
+    
+    init(apiError: APIError) {
+        self.init(title: apiError.localizedDescription)
     }
 }
 

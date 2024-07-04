@@ -7,6 +7,10 @@
 
 import Foundation
 
+public struct GitHubError: Decodable {
+    public let message: String
+}
+
 public struct UserItems: Decodable {
     var items: [User]
 }
