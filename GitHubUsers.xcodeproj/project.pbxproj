@@ -21,6 +21,9 @@
 		94E958862C36A70B00EFAF87 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958852C36A70B00EFAF87 /* UserListViewModel.swift */; };
 		94E958892C36AECB00EFAF87 /* DataPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 94E958882C36AECB00EFAF87 /* DataPackage */; };
 		94E9588C2C36B3DE00EFAF87 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9588B2C36B3DE00EFAF87 /* Repository.swift */; };
+		94E958902C36EFCF00EFAF87 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9588E2C36EFCF00EFAF87 /* UserDetailView.swift */; };
+		94E958912C36EFCF00EFAF87 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9588F2C36EFCF00EFAF87 /* UserDetailViewModel.swift */; };
+		94E958942C36F6D000EFAF87 /* ReposCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958932C36F6D000EFAF87 /* ReposCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		94E958812C369F2C00EFAF87 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		94E958852C36A70B00EFAF87 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		94E9588B2C36B3DE00EFAF87 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		94E9588E2C36EFCF00EFAF87 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		94E9588F2C36EFCF00EFAF87 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		94E958932C36F6D000EFAF87 /* ReposCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		94E958782C369B6900EFAF87 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				94E958922C36F6AE00EFAF87 /* Cells */,
 				94E9587D2C369C4300EFAF87 /* AlertUIModel.swift */,
 				94E9587C2C369C4300EFAF87 /* LoadingView.swift */,
 			);
@@ -156,6 +163,7 @@
 		94E9587B2C369C2E00EFAF87 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				94E9588D2C36EFBB00EFAF87 /* UserDetail */,
 				94E958802C369F1D00EFAF87 /* UsersList */,
 			);
 			path = Features;
@@ -174,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				94E958792C369B8600EFAF87 /* UsersList.swift */,
-				94E958812C369F2C00EFAF87 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +200,24 @@
 				94E9588B2C36B3DE00EFAF87 /* Repository.swift */,
 			);
 			path = WebServices;
+			sourceTree = "<group>";
+		};
+		94E9588D2C36EFBB00EFAF87 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				94E9588E2C36EFCF00EFAF87 /* UserDetailView.swift */,
+				94E9588F2C36EFCF00EFAF87 /* UserDetailViewModel.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		94E958922C36F6AE00EFAF87 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				94E958812C369F2C00EFAF87 /* UserCell.swift */,
+				94E958932C36F6D000EFAF87 /* ReposCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +359,12 @@
 				94E9587A2C369B8600EFAF87 /* UsersList.swift in Sources */,
 				94E958862C36A70B00EFAF87 /* UserListViewModel.swift in Sources */,
 				94E9587F2C369C4E00EFAF87 /* LoadingView.swift in Sources */,
+				94E958902C36EFCF00EFAF87 /* UserDetailView.swift in Sources */,
+				94E958912C36EFCF00EFAF87 /* UserDetailViewModel.swift in Sources */,
 				94E9588C2C36B3DE00EFAF87 /* Repository.swift in Sources */,
 				94E9587E2C369C4B00EFAF87 /* AlertUIModel.swift in Sources */,
 				94E958432C357EBA00EFAF87 /* ContentView.swift in Sources */,
+				94E958942C36F6D000EFAF87 /* ReposCell.swift in Sources */,
 				94E958412C357EBA00EFAF87 /* GitHubUsersApp.swift in Sources */,
 				94E958822C369F2C00EFAF87 /* UserCell.swift in Sources */,
 			);

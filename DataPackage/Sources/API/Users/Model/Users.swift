@@ -55,9 +55,26 @@ extension User: Hashable {
     }
 }
 
-public struct Repo: Decodable {
+public struct Repo: Decodable, Identifiable {
+    public let id: Int
     public let name: String
     public let description: String
+    
+    public init(id: Int, name: String, description: String) {
+        self.id = id
+        self.name = name
+        self.description = description
+    }
+}
+
+extension Repo: Hashable {
+    public func hash(into hasher: inout Hasher) {
+          return hasher.combine(id)
+      }
+    
+    public static func == (lhs: Repo, rhs: Repo) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 /*{
