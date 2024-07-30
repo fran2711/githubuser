@@ -62,7 +62,9 @@ public struct UsersList<ViewModel: UserListVM>: View {
             .onChange(of: searchText) { _, newValue in
                 viewModel.searchText = searchText
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    viewModel.handle(event: .searchUser(user: newValue))
+                    if viewModel.searchText == newValue {
+                        viewModel.handle(event: .searchUser(user: newValue))
+                    }
                 }
             }
         }

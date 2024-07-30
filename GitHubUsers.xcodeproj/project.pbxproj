@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		94E958412C357EBA00EFAF87 /* GitHubUsersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958402C357EBA00EFAF87 /* GitHubUsersApp.swift */; };
-		94E958432C357EBA00EFAF87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958422C357EBA00EFAF87 /* ContentView.swift */; };
 		94E958452C357EBC00EFAF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E958442C357EBC00EFAF87 /* Assets.xcassets */; };
 		94E958482C357EBC00EFAF87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94E958472C357EBC00EFAF87 /* Preview Assets.xcassets */; };
 		94E958522C357EBD00EFAF87 /* GitHubUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E958512C357EBD00EFAF87 /* GitHubUsersTests.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		94E9583D2C357EBA00EFAF87 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E958402C357EBA00EFAF87 /* GitHubUsersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUsersApp.swift; sourceTree = "<group>"; };
-		94E958422C357EBA00EFAF87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		94E958442C357EBC00EFAF87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94E958472C357EBC00EFAF87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		94E9584D2C357EBD00EFAF87 /* GitHubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +116,6 @@
 				94E9588A2C36B3A200EFAF87 /* WebServices */,
 				94E9587B2C369C2E00EFAF87 /* Features */,
 				94E958782C369B6900EFAF87 /* CommonViews */,
-				94E958422C357EBA00EFAF87 /* ContentView.swift */,
 				94E958442C357EBC00EFAF87 /* Assets.xcassets */,
 				94E958462C357EBC00EFAF87 /* Preview Content */,
 			);
@@ -379,7 +376,6 @@
 				94E958912C36EFCF00EFAF87 /* UserDetailViewModel.swift in Sources */,
 				94E9588C2C36B3DE00EFAF87 /* Repository.swift in Sources */,
 				94E9587E2C369C4B00EFAF87 /* AlertUIModel.swift in Sources */,
-				94E958432C357EBA00EFAF87 /* ContentView.swift in Sources */,
 				94E958942C36F6D000EFAF87 /* ReposCell.swift in Sources */,
 				94E958412C357EBA00EFAF87 /* GitHubUsersApp.swift in Sources */,
 				94E958822C369F2C00EFAF87 /* UserCell.swift in Sources */,

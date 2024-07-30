@@ -51,6 +51,7 @@ class UserListViewModel: UserListVM {
                 self.users.append(contentsOf: users)
                 self.nextPage+=1
             } catch {
+                self.nextPage = 1
                 self.alert = .init(error: error)
             }
         }

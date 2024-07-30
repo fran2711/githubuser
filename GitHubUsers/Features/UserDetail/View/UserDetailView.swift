@@ -16,14 +16,15 @@ public protocol UserDetailVM: ObservableObject {
     var user: User { get }
     var repos: [Repo] { get }
     var followers: [User] { get }
-    var loading: Bool { get }
+    var followersLoading: Bool { get }
+    var reposLoading: Bool { get }
     var alert: AlertUIModel? { get set }
     
     func handle(event: UserDetailEvent)
 }
 
 public struct UserDetailView<ViewModel: UserDetailVM>: View {
-        
+    
     @StateObject var viewModel: ViewModel
     
     public init(viewModel: @autoclosure @escaping () -> ViewModel) {
@@ -51,46 +52,52 @@ public struct UserDetailView<ViewModel: UserDetailVM>: View {
             }
             .padding()
             
-            if !viewModel.repos.isEmpty {
-                VStack(alignment: .leading, spacing: 16) {
-                    ForEach(viewModel.repos) { repo in
-                        ReposCell(name: repo.name,
-                                  description: repo.description)
-                        
-                        if repo != viewModel.repos.last {
-                            Divider()
-                                .background(Color.white)
-                                .frame(height: 2)
+            VStack {
+                if !viewModel.repos.isEmpty {
+                    VStack(alignment: .leading, spacing: 16) {
+                        ForEach(viewModel.repos) { repo in
+                            ReposCell(name: repo.name,
+                                      description: repo.description)
+                            
+                            if repo != viewModel.repos.last {
+                                Divider()
+                                    .background(Color.white)
+                                    .frame(height: 2)
+                            }
                         }
                     }
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                    .padding()
                 }
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(20)
-                .padding()
             }
+            .loading(loading: viewModel.reposLoading)
             
-            if !viewModel.followers.isEmpty {
-                VStack {
-                    ForEach(viewModel.followers) { follower in
-                        UserCell(imageUrl: follower.avatarImageUrl, name: follower.userName)
-                        
-                        if follower != viewModel.followers.last {
-                            Divider()
-                                .frame(height: 2)
+            
+            VStack {
+                if !viewModel.followers.isEmpty {
+                    VStack {
+                        ForEach(viewModel.followers) { follower in
+                            UserCell(imageUrl: follower.avatarImageUrl, name: follower.userName)
+                            
+                            if follower != viewModel.followers.last {
+                                Divider()
+                                    .frame(height: 2)
+                            }
                         }
                     }
+                    .padding()
+                    .background(Color.gray)
+                    .cornerRadius(20)
+                    .padding()
                 }
-                .padding()
-                .background(Color.gray)
-                .cornerRadius(20)
-                .padding()
             }
-          
+            .loading(loading: viewModel.followersLoading)
+            
         }
         .alert(model: $viewModel.alert)
-        .loading(loading: viewModel.loading)
-            
+        
     }
 }
 
@@ -105,7 +112,7 @@ class MockUserDetailVM: UserDetailVM {
     var repos: [Repo] = [Repo(id: 75305035,
                               name: "Android-Baccus",
                               description: "A wine cellar multi platform app developed in Android that takes the data from a JSON developed in course of KeepCoding"),
-                         Repo(id: 75304383, 
+                         Repo(id: 75304383,
                               name: "Cards",
                               description: "Game of cards programmed in Swift"),
                          Repo(id: 81994062,
@@ -118,13 +125,14 @@ class MockUserDetailVM: UserDetailVM {
                                   reposUrl: "https://api.github.com/users/VagrantStory/repos",
                                   followersUrl: "https://api.github.com/users/VagrantStory/followers"),
                              User(id: 4069972,
-                                                           userName: "VagrantStory",
-                                                           avatarUrl: "https://avatars.githubusercontent.com/u/4069972?v=4",
-                                                           reposUrl: "https://api.github.com/users/VagrantStory/repos",
-                                                           followersUrl: "https://api.github.com/users/VagrantStory/followers")]
-        
+                                  userName: "VagrantStory",
+                                  avatarUrl: "https://avatars.githubusercontent.com/u/4069972?v=4",
+                                  reposUrl: "https://api.github.com/users/VagrantStory/repos",
+                                  followersUrl: "https://api.github.com/users/VagrantStory/followers")]
+    
     var alert: AlertUIModel? = nil
-    var loading: Bool = false
+    var followersLoading: Bool = true
+    var reposLoading: Bool = false
     
     func handle(event: UserDetailEvent) { }
 }
